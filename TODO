@@ -1,0 +1,7 @@
+# read clipboard text line by line
+
+# extract those line which contain notes
+
+# read each notes 
+
+# play next note when keyPressed
