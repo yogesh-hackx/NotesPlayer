@@ -10,16 +10,17 @@ m = True
 
 pgui.PAUSE = 0.03
 
-def noteLine():
+def noteLine():     # Getting only the lines which has notes in it.
     m = True
     while(m):
         m = notes.readline()
         if "#" in m:
             return (m)
-def keyPressed():
+
+def keyPressed():   # Checking for whether keyPressed
     while True: 
         try: 
-            if keyboard.is_pressed('right'):  # if key 'q' is pressed 
+            if keyboard.is_pressed('right'):  
                 return False
             else:
                 return True
@@ -30,9 +31,11 @@ pattern = re.compile(r'(?![EB]#)[A-G](\#|b|\+)?')
 
 matches = pattern.finditer(noteLine())
 
-# for match in matches:
+
+# for match in matches:             # Debugging Area :P
 #     print(match.group())
 sleepSec = 0
+
 while matches:
 
     for match in matches:
@@ -111,20 +114,3 @@ while matches:
                 # if "+" in match.group():
     matches = pattern.finditer(noteLine())
             
-
-            
-
-
-'''if __name__ == "__main__": 
-    # creating thread 
-    t1 = threading.Thread(target= eachNote) 
-    t2 = threading.Thread(target=keyDetect) 
-  
-    # starting thread 1 
-    t1.start() 
-    # starting thread 2 
-    t2.start()
-'''
-
-
-        
